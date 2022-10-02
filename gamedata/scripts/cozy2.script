@@ -1,0 +1,85 @@
+function get_nearby_lit_campfire(dist)
+	local pos = db.actor:position()
+	for id, binder in pairs(bind_campfire.campfires_all) do
+		if (binder and binder.campfire and binder.campfire:is_on()) then
+			if (pos:distance_to_sqr(binder.object:position()) <= dist) then
+				return true
+			end
+		end 
+	end 
+	return false
+end
+
+function getNum(key)
+	return tonumber(ui_mcm.get('cozy2/' .. key))
+end
+
+function create_schedule(delay_key, amount_key, handler)
+
+	local next_update = nil
+
+	return function()
+		local current_time = time_global()
+		local delay = getNum(delay_key) * 1000 or 10000
+		local amount = getNum(amount_key)
+
+		if delay < 1000 then
+			next_update = nil
+			return
+		end
+
+		if next_update == nil then
+			next_update = current_time + delay
+		else
+			if next_update <= current_time then
+				handler(amount)
+				next_update = current_time + delay
+			end
+		end
+		
+	end
+
+end
+
+function handle_sleep(amount)
+	actor_status_sleep.actor_on_sleep(-(amount / 60))
+end
+
+function handle_heal(amount)
+	db.actor:change_health(amount / 100)
+end
+
+function handle_calm(amount)
+	db.actor:change_psy_health(amount / 100)
+end
+
+local sleep = create_schedule("sleep_rate", "sleep_amount", handle_sleep)
+local heal = create_schedule("heal_rate", "heal_amount", handle_heal)
+local calm = create_schedule("calm_rate", "calm_amount", handle_calm)
+
+function actor_on_update()
+
+	if not (db.actor) then 
+		return
+	end
+
+
+	if not ui_mcm.get('cozy2/enabled') then
+		return
+	end
+
+	local radius = ui_mcm.get('cozy2/radius') or 10
+
+	if not get_nearby_lit_campfire(radius) then
+		return
+	end
+
+	sleep()
+	heal()
+	calm()
+
+end
+
+function on_game_start()
+	RegisterScriptCallback("actor_on_update",actor_on_update)
+end

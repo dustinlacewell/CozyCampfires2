@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="windows-1251"?>
+
+<string_table>
+	
+	<string id="ui_mcm_cozy2_title">
+		<text>Cozy Campfires 2</text>
+	</string>
+
+	<string id="ui_mcm_menu_cozy2">
+		<text>Cozy Campfires 2</text>
+	</string>
+
+	<string id="ui_mcm_cozy2_enabled_desc">
+		<text>Experience buffs around Campfires.</text>
+	</string>
+
+
+	<string id="ui_mcm_cozy2_enabled">
+		<text>Enable Campfire Effects</text>
+	</string>
+
+	<string id="ui_mcm_cozy2_enabled_desc">
+		<text>Toggle whether or not this mod is active or not.</text>
+	</string>
+
+
+	<string id="ui_mcm_cozy2_radius">
+		<text>Campfire Radius</text>
+	</string>
+
+	<string id="ui_mcm_cozy2_radius_desc">
+		<text>How close you have to be to the Campfire.</text>
+	</string>
+
+	<!-- Healing -->
+
+	<string id="ui_mcm_cozy2_heal_rate">
+		<text>Heal Interval</text>
+	</string>
+
+	<string id="ui_mcm_cozy2_heal_rate_desc">
+		<text>Seconds between health increases.</text>
+	</string>
+
+
+	<string id="ui_mcm_cozy2_heal_amount">
+		<text>Heal Amount</text>
+	</string>
+
+	<string id="ui_mcm_cozy2_heal_amount_desc">
+		<text>Percent of health healed each interval.</text>
+	</string>
+
+	<!-- Sleeping -->
+
+	<string id="ui_mcm_cozy2_sleep_rate">
+		<text>Tiredness Interval</text>
+	</string>
+
+	<string id="ui_mcm_cozy2_sleep_rate_desc">
+		<text>Seconds between sleepiness increases.</text>
+	</string>
+
+
+	<string id="ui_mcm_cozy2_sleep_amount">
+		<text>Tiredness Amount</text>
+	</string>
+
+	<string id="ui_mcm_cozy2_sleep_amount_desc">
+		<text>Minutes of sleep lost each interval.</text>
+	</string>
+
+	<!-- Calming -->
+
+	<string id="ui_mcm_cozy2_calm_rate">
+		<text>Calm Interval</text>
+	</string>
+
+	<string id="ui_mcm_cozy2_calm_rate_desc">
+		<text>Seconds between psy increases.</text>
+	</string>
+
+
+	<string id="ui_mcm_cozy2_calm_amount">
+		<text>Calm Amount</text>
+	</string>
+
+	<string id="ui_mcm_cozy2_calm_amount_desc">
+		<text>Percent of psy healed each interval.</text>
+	</string>
+	
+</string_table>

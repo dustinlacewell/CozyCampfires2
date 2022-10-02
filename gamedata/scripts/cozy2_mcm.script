@@ -1,0 +1,84 @@
+ui = {
+    id = "cozy2",
+    sh = true,
+    gr = {
+        {
+            id = "title",
+            type = "title",
+            val = "center",
+            text = "ui_mcm_cozy2_title",
+        },
+        {
+            id = "enabled",
+            type = "check",
+            val = 1,
+            def = true,
+        },
+        {
+            id = "radius",
+            type = "track",
+            val = 2,
+            min = 5,
+            max = 25,
+            step = 1,
+            def = 10,
+        },
+        {
+            id = "heal_rate",
+            type = "track",
+            val = 2,
+            min = 0,
+            max = 10,
+            step = 1,
+            def = 5,
+        },
+        {
+            id = "heal_amount",
+            type = "input",
+            val = 2,
+            def = 1,
+            min = 0,
+            max = 100,            
+        },
+        {
+            id = "sleep_rate",
+            type = "track",
+            val = 2,
+            min = 0,
+            max = 10,
+            step = 1,
+            def = 5,
+        },
+        {
+            id = "sleep_amount",
+            type = "input",
+            val = 2,
+            def = 15,
+            min = 0,
+            max = 60,
+            step = 1,         
+        },
+        {
+            id = "calm_rate",
+            type = "track",
+            val = 2,
+            min = 0,
+            max = 10,
+            step = 1,
+            def = 5,
+        },
+        {
+            id = "calm_amount",
+            type = "input",
+            val = 2,
+            def = 1,
+            min = 0,
+            max = 100,            
+        },
+    }
+}
+
+
+function on_mcm_load()
+    return ui
+end
